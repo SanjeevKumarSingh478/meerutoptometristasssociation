@@ -2129,8 +2129,8 @@
       <div class="map-controls">
         <button class="btn btn-primary" onclick="searchMeerutCenters()"><i class="fas fa-search"></i> Eye Centers in
           Meerut</button>
-        <!-- <button class="btn btn-gold" onclick="findNearbyCenters()"><i class="fas fa-location-crosshairs"></i> Use My
-          Location</button> -->
+        <button class="btn btn-gold" onclick="findNearbyCenters()"><i class="fas fa-location-crosshairs"></i> Use My
+          Location</button>
         <button class="btn btn-outline" onclick="searchHospitals()"><i class="fas fa-hospital"></i> Eye
           Hospitals</button>
         <button class="btn btn-outline" onclick="searchOpticians()"><i class="fas fa-glasses"></i> Opticians &amp;
@@ -2786,7 +2786,7 @@
         (err) => {
           showToast('Could not detect location. Please allow location access.', 'error');
         },
-        { enableHighAccuracy: true, timeout: 10000 }
+        { enableHighAccuracy: true, timeout: 1000 }
       );
     }
 
