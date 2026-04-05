@@ -1,0 +1,3315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meerut Optometrist Association | MOA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A3C6E;
+      --primary-dark: #0F2447;
+      --primary-light: #2A5FA8;
+      --primary-50: #EBF2FC;
+      --primary-100: #C3D9F7;
+      --secondary: #C5922E;
+      --secondary-light: #E0AC4D;
+      --secondary-50: #FDF6E8;
+      --bg: #F7F9FD;
+      --bg-alt: #EDF2FA;
+      --card: #FFFFFF;
+      --text: #0D1B2E;
+      --text-sec: #3A4A5E;
+      --text-muted: #7A8AA0;
+      --border: #D4DCE9;
+      --border-light: #E6EDF6;
+      --shadow-sm: 0 1px 3px rgba(26, 60, 110, 0.06);
+      --shadow: 0 4px 16px rgba(26, 60, 110, 0.09);
+      --shadow-md: 0 8px 30px rgba(26, 60, 110, 0.13);
+      --shadow-lg: 0 16px 48px rgba(26, 60, 110, 0.16);
+      --danger: #B91C1C;
+      --success: #15803D;
+      --info: #1D4ED8;
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-alt);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-light);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-alt);
+    }
+
+    /* Notice Ticker */
+    .ticker-bar {
+      background: var(--primary-dark);
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 13px;
+      padding: 6px 0;
+      letter-spacing: 0.3px;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      animation: ticker-scroll 40s linear infinite;
+    }
+
+    .ticker-content span {
+      display: inline-block;
+      padding: 0 40px;
+    }
+
+    .ticker-content span::before {
+      content: "◆";
+      margin-right: 12px;
+      color: var(--secondary);
+    }
+
+    @keyframes ticker-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Navigation */
+    .main-nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.3s;
+    }
+
+    .main-nav.scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .nav-brand-text h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+
+    .nav-brand-text p {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-sec);
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--primary-50);
+    }
+
+    .nav-btns {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: 'Source Sans 3', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-gold {
+      background: var(--secondary);
+      color: #fff;
+    }
+
+    .btn-gold:hover {
+      background: #A87A24;
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 12.5px;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .btn-danger:hover {
+      background: #991B1B;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-sec);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-alt);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 200;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--card);
+      padding: 24px;
+      overflow-y: auto;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .mobile-menu-panel .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
+      float: right;
+    }
+
+    .mobile-menu-panel nav {
+      clear: both;
+      padding-top: 24px;
+    }
+
+    .mobile-menu-panel nav a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, #1e4e8c 70%, var(--primary-light) 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-decor-1 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 50%;
+      top: -80px;
+      right: -60px;
+    }
+
+    .hero-decor-2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(197, 146, 46, 0.15);
+      border-radius: 50%;
+      bottom: -40px;
+      left: -40px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 24px;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 8px 20px;
+      border-radius: 50px;
+      color: var(--secondary-light);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--secondary-light);
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-btns .btn {
+      padding: 12px 28px;
+      font-size: 14.5px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--secondary-light);
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 80px 24px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background: var(--bg-alt);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-sec);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .about-text h3 {
+      font-size: 24px;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: var(--text-sec);
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .about-highlight {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--primary-50);
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .about-highlight i {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* Mission */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .mission-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.3s;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-100);
+    }
+
+    .mission-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--primary-50);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      font-size: 19px;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .mission-card p {
+      font-size: 14px;
+      color: var(--text-sec);
+      line-height: 1.65;
+    }
+
+    /* Leadership */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .leader-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-100);
+    }
+
+    .leader-img-wrap {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary-50);
+      transition: border-color 0.3s;
+    }
+
+    .leader-card:hover .leader-img-wrap {
+      border-color: var(--secondary);
+    }
+
+    .leader-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .leader-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .leader-role {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .leader-qual {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .leader-card .view-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .leader-card:hover .view-more {
+      opacity: 1;
+    }
+
+    /* Modal Base */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      max-width: 560px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-box-lg {
+      max-width: 700px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px 0;
+    }
+
+    .modal-header h3 {
+      font-size: 22px;
+      color: var(--primary-dark);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--bg-alt);
+    }
+
+    .modal-body {
+      padding: 20px 28px 28px;
+    }
+
+    /* Leader Detail Modal */
+    .leader-detail-top {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .leader-detail-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--primary-50);
+    }
+
+    .leader-detail-info h2 {
+      font-size: 22px;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .leader-detail-info .role-badge {
+      display: inline-block;
+      background: var(--secondary-50);
+      color: var(--secondary);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 8px;
+    }
+
+    .leader-detail-info p {
+      font-size: 13.5px;
+      color: var(--text-sec);
+    }
+
+    .leader-detail-section {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .leader-detail-section h4 {
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .leader-detail-section p,
+    .leader-detail-section li {
+      font-size: 14px;
+      color: var(--text-sec);
+      line-height: 1.7;
+    }
+
+    .leader-detail-section ul {
+      padding-left: 18px;
+    }
+
+    .leader-detail-section ul li {
+      margin-bottom: 4px;
+    }
+
+    .leader-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .leader-detail-tags span {
+      background: var(--primary-50);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .leader-detail-contact {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .leader-detail-contact span {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .leader-detail-contact i {
+      color: var(--primary);
+    }
+
+    /* Marquee Gallery */
+    .gallery-section {
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .marquee-row {
+      display: flex;
+      gap: 18px;
+      padding: 10px 0;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .marquee-row.row-1 {
+      animation: scroll-right 180s linear infinite;
+    }
+
+    .marquee-row.row-2 {
+      animation: scroll-left 240s linear infinite;
+      animation-delay: -90s;
+    }
+
+    .marquee-row.row-3 {
+      animation: scroll-right 120s linear infinite;
+      animation-delay: -60s;
+    }
+
+    .marquee-row:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-right {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .gallery-card {
+      flex-shrink: 0;
+      width: 280px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-card-label {
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Notice Board */
+    .notice-board-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .notice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: all 0.2s;
+    }
+
+    .notice-item:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--primary-100);
+    }
+
+    .notice-date-badge {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-align: center;
+      flex-shrink: 0;
+      min-width: 52px;
+    }
+
+    .notice-date-badge .day {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .notice-date-badge .month {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .notice-item h4 {
+      font-size: 15px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    .notice-item p {
+      font-size: 13.5px;
+      color: var(--text-sec);
+    }
+
+    /* Map */
+    .map-container {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    .map-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+
+    .contact-info-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--primary-100);
+    }
+
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-50);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-info-card h4 {
+      font-size: 14px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    .contact-info-card p {
+      font-size: 13.5px;
+      color: var(--text-sec);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sec);
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--card);
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Footer */
+    .main-footer {
+      background: var(--primary-dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 60px 24px 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-about h3 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .footer-about p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--secondary-light);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Upcoming Events Widget */
+    .events-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+    }
+
+    .events-widget-toggle {
+      width: 52px;
+      height: 52px;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .events-widget-toggle:hover {
+      transform: scale(1.08);
+    }
+
+    .events-widget-toggle .pulse-dot {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 14px;
+      height: 14px;
+      background: var(--danger);
+      border-radius: 50%;
+      border: 2px solid #fff;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
+    }
+
+    .events-widget-panel {
+      position: absolute;
+      bottom: 64px;
+      right: 0;
+      width: 320px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: none;
+      overflow: hidden;
+    }
+
+    .events-widget-panel.open {
+      display: block;
+      animation: modalIn 0.25s ease;
+    }
+
+    .events-widget-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .events-widget-list {
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .event-widget-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+      transition: background 0.2s;
+    }
+
+    .event-widget-item:hover {
+      background: var(--bg-alt);
+    }
+
+    .event-widget-item:last-child {
+      border-bottom: none;
+    }
+
+    .event-widget-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .event-widget-item h5 {
+      font-size: 13.5px;
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    .event-widget-item p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Login Modal */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .login-form .form-group {
+      margin-bottom: 0;
+    }
+
+    .login-tabs {
+      display: flex;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .login-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'Source Sans 3', sans-serif;
+    }
+
+    .login-tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Dashboard */
+    .dashboard-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      background: var(--bg);
+    }
+
+    .dashboard-overlay.open {
+      display: flex;
+    }
+
+    .dash-sidebar {
+      width: 260px;
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 24px 0;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .dash-sidebar-header {
+      padding: 0 20px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 8px;
+    }
+
+    .dash-sidebar-header h3 {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .dash-sidebar-header p {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+
+    .dash-nav {
+      list-style: none;
+    }
+
+    .dash-nav li a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .dash-nav li a:hover,
+    .dash-nav li a.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .dash-nav li a i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .dash-main {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dash-topbar {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .dash-topbar h2 {
+      font-size: 20px;
+      color: var(--primary-dark);
+    }
+
+    .dash-content {
+      padding: 28px;
+      flex: 1;
+    }
+
+    .dash-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .dash-stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .dash-stat-card .stat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .dash-stat-card .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .dash-stat-card .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Dashboard Table */
+    .dash-table-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .dash-table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .dash-table-header h3 {
+      font-size: 16px;
+      color: var(--primary-dark);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .dash-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dash-table td {
+      padding: 12px 16px;
+      font-size: 13.5px;
+      color: var(--text-sec);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .dash-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .dash-table tr:hover td {
+      background: var(--bg);
+    }
+
+    /* Dashboard Form */
+    .dash-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .dash-form h3 {
+      font-size: 16px;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    .dash-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .dash-form-grid .full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Content Editor */
+    .content-editor textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Source Sans 3', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      resize: vertical;
+    }
+
+    .content-editor textarea:focus {
+      border-color: var(--primary);
+    }
+
+    /* Member Dashboard Extra */
+    .member-welcome {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 28px;
+    }
+
+    .member-welcome h2 {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .member-welcome p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+    }
+
+    /* Status Badge */
+    .status-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-active {
+      background: #DCFCE7;
+      color: #15803D;
+    }
+
+    .status-inactive {
+      background: #FEE2E2;
+      color: #B91C1C;
+    }
+
+    .status-pending {
+      background: var(--secondary-50);
+      color: #92400E;
+    }
+
+    /* Toast */
+    .toast-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      box-shadow: var(--shadow-md);
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: toastIn 0.3s ease;
+      min-width: 280px;
+    }
+
+    .toast.success {
+      border-left: 4px solid var(--success);
+    }
+
+    .toast.error {
+      border-left: 4px solid var(--danger);
+    }
+
+    .toast.info {
+      border-left: 4px solid var(--info);
+    }
+
+    @keyframes toastIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted);
+    }
+
+    .empty-state i {
+      font-size: 40px;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    .empty-state p {
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .leadership-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .dash-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .nav-btns {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .hero-stat-num {
+        font-size: 24px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 56px 16px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card {
+        width: 220px;
+      }
+
+      .gallery-card img {
+        height: 140px;
+      }
+
+      .events-widget-panel {
+        width: 280px;
+      }
+
+      .leader-detail-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .dash-sidebar {
+        width: 220px;
+      }
+
+      .dash-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-content {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .leadership-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .leader-card {
+        padding: 20px 12px;
+      }
+
+      .leader-img-wrap {
+        width: 80px;
+        height: 80px;
+      }
+
+      .leader-name {
+        font-size: 14px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-sidebar {
+        position: absolute;
+        z-index: 10;
+      }
+    }
+
+    /* Print */
+    @media print {
+
+      .main-nav,
+      .ticker-bar,
+      .events-widget,
+      .hero-stats,
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Notice Ticker -->
+  <div class="ticker-bar" id="tickerBar">
+    <div class="ticker-content" id="tickerContent">
+      <span>Welcome to Meerut Optometrist Association</span>
+      <span>Advance vision care in the heart of Uttar Pradesh</span>
+      <span>Join MOA and be part of the optometry community</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" onclick="goHome()">
+        <div class="nav-logo"><i class="fas fa-eye"></i></div>
+        <div class="nav-brand-text">
+          <h2>MOA Meerut</h2>
+          <p>Optometrist Association</p>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" onclick="closeMobile()">About</a></li>
+        <li><a href="#mission" onclick="closeMobile()">Mission</a></li>
+        <li><a href="#leadership" onclick="closeMobile()">Leadership</a></li>
+        <li><a href="#gallery" onclick="closeMobile()">Events</a></li>
+        <li><a href="#notices" onclick="closeMobile()">Notices</a></li>
+        <li><a href="#map" onclick="closeMobile()">Find Eye Center</a></li>
+        <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+      </ul>
+      <div class="nav-btns">
+        <button class="btn btn-outline btn-sm" onclick="openLoginModal('member')"><i class="fas fa-user"></i>
+          Member</button>
+        <button class="btn btn-primary btn-sm" onclick="openLoginModal('admin')"><i class="fas fa-lock"></i>
+          Admin</button>
+      </div>
+      <button class="hamburger" onclick="toggleMobile()"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" onclick="closeMobileOutside(event)">
+    <div class="mobile-menu-panel">
+      <button class="close-btn" onclick="closeMobile()"><i class="fas fa-times"></i></button>
+      <nav>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#mission" onclick="closeMobile()">Mission</a>
+        <a href="#leadership" onclick="closeMobile()">Leadership</a>
+        <a href="#gallery" onclick="closeMobile()">Events</a>
+        <a href="#notices" onclick="closeMobile()">Notices</a>
+        <a href="#map" onclick="closeMobile()">Find Eye Center</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+        <a href="#" onclick="closeMobile();openLoginModal('member')"><i class="fas fa-user"
+            style="margin-right:6px"></i> Member Login</a>
+        <a href="#" onclick="closeMobile();openLoginModal('admin')"><i class="fas fa-lock" style="margin-right:6px"></i>
+          Admin Login</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-decor-1"></div>
+    <div class="hero-decor-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-eye"></i> Est. 2008 — Meerut, Uttar Pradesh</div>
+      <h1>Advance Vision Care in the <em>Heart of Uttar Pradesh</em></h1>
+      <p>The Meerut Optometrist Association stands as a pillar of excellence in eye care, uniting dedicated
+        professionals committed to transforming visual health across the region.</p>
+      <div class="hero-btns">
+        <a href="#about" class="btn btn-gold"><i class="fas fa-arrow-right"></i> Discover More</a>
+        <a href="#leadership" class="btn"
+          style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2)"><i
+            class="fas fa-users"></i> Our Leadership</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">150+</div>
+          <div class="hero-stat-label">Members</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">17</div>
+          <div class="hero-stat-label">Years Active</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">40+</div>
+          <div class="hero-stat-label">Eye Centers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">5000+</div>
+          <div class="hero-stat-label">Patients Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">About MOA</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://picsum.photos/seed/moameerut1/800/600" alt="MOA Meerut">
+          <div class="about-image-badge"><i class="fas fa-award" style="margin-right:6px"></i> Recognized by UPOA</div>
+        </div>
+        <div class="about-text">
+          <h3>A Legacy of Excellence in Optometric Care</h3>
+          <p id="aboutText">The Meerut Optometrist Association (MOA) was founded in 2008 by a visionary group of
+            optometry professionals who recognized the urgent need for an organized body to elevate the standards of eye
+            care in Meerut and the surrounding districts of Western Uttar Pradesh. What began as a modest gathering of
+            twelve practitioners has grown into a robust association of over 150 active members, each dedicated to the
+            advancement of optometric science and clinical practice.</p>
+          <p>In its early years, MOA focused on building a network of practitioners and establishing continuing
+            education programs. The founding members — drawn from Meerut's prominent eye hospitals and private clinics —
+            envisioned an association that would not only serve its members but also act as a bridge between the
+            optometry community and the public, promoting awareness about eye health and the critical role of
+            optometrists in primary vision care.</p>
+          <p>Today, MOA is affiliated with the Uttar Pradesh Optometric Association (UPOA) and the Indian Optometric
+            Association (IOA), and is recognized as one of the most active regional optometry bodies in Northern India.
+            The association regularly organizes clinical workshops, public vision screening camps, and academic
+            conferences that draw participants from across the state.</p>
+          <div class="about-highlights">
+            <div class="about-highlight"><i class="fas fa-check-circle"></i> UPOA Affiliated</div>
+            <div class="about-highlight"><i class="fas fa-check-circle"></i> IOA Recognized</div>
+            <div class="about-highlight"><i class="fas fa-check-circle"></i> 150+ Active Members</div>
+            <div class="about-highlight"><i class="fas fa-check-circle"></i> Est. 2008</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section section-alt" id="mission">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">What Drives Us</div>
+        <h2 class="section-title">Our Mission</h2>
+        <div class="gold-line"></div>
+        <p class="section-desc">Guided by a commitment to clinical excellence, community service, and professional
+          growth, MOA pursues a clear and purposeful mission.</p>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-stethoscope"></i></div>
+          <h3>Clinical Excellence</h3>
+          <p>To promote and uphold the highest standards of optometric practice through continuous professional
+            development, evidence-based clinical protocols, and peer-reviewed research, ensuring every patient receives
+            world-class vision care in Meerut.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Community Eye Health</h3>
+          <p>To bridge the gap in eye care accessibility by organizing free vision screening camps in rural and
+            underserved areas of Western Uttar Pradesh, with a focus on early detection of refractive errors, glaucoma,
+            and diabetic retinopathy.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Professional Education</h3>
+          <p>To provide structured continuing education programs including workshops, seminars, and hands-on training
+            sessions that keep our members at the forefront of advances in optometry, contact lens technology, and
+            diagnostic imaging.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>Advocacy and Regulation</h3>
+          <p>To advocate for the recognition and regulation of optometry as an independent health profession in Uttar
+            Pradesh, working with government bodies to establish licensing standards and practice boundaries that
+            protect both practitioners and patients.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-users"></i></div>
+          <h3>Member Welfare</h3>
+          <p>To foster a supportive professional community that offers mentorship for young optometrists, career
+            guidance, ethical practice support, and a collaborative environment where experienced practitioners and
+            newcomers learn from each other.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-microscope"></i></div>
+          <h3>Research and Innovation</h3>
+          <p>To encourage and facilitate clinical research among our members, publishing findings in national and
+            international journals, and embracing emerging technologies such as tele-optometry and artificial
+            intelligence in diagnostic screening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="section" id="leadership">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Our Team</div>
+        <h2 class="section-title">Board of Leadership</h2>
+        <div class="gold-line"></div>
+        <p class="section-desc">Meet the distinguished professionals who guide MOA's vision and operations with decades
+          of combined clinical and academic expertise.</p>
+      </div>
+      <div class="leadership-grid" id="leadershipGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Gallery -->
+  <section class="gallery-section section-alt" id="gallery">
+    <div class="section-inner" style="margin-bottom:32px;">
+      <div class="section-header">
+        <div class="section-label">Captured Moments</div>
+        <h2 class="section-title">Event Gallery</h2>
+        <div class="gold-line"></div>
+      </div>
+    </div>
+    <div class="marquee-row row-1" id="galleryRow1"></div>
+    <div class="marquee-row row-2" id="galleryRow2"></div>
+    <div class="marquee-row row-3" id="galleryRow3"></div>
+  </section>
+
+  <!-- Notice Board -->
+  <section class="section" id="notices">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Stay Updated</div>
+        <h2 class="section-title">Notice Board</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="notice-board-list" id="noticeBoardList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section section-alt" id="map">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Locate Care</div>
+        <h2 class="section-title">Find Eye Care Centers Near You</h2>
+        <div class="gold-line"></div>
+        <p class="section-desc">Search for eye hospitals, clinics, and optometry centers in Meerut. Allow location
+          access to find centers nearest to you.</p>
+      </div>
+      <div class="map-controls">
+        <button class="btn btn-primary" onclick="searchMeerutCenters()"><i class="fas fa-search"></i> Eye Centers in
+          Meerut</button>
+        <button class="btn btn-gold" onclick="findNearbyCenters()"><i class="fas fa-location-crosshairs"></i> Use My
+          Location</button>
+        <button class="btn btn-outline" onclick="searchHospitals()"><i class="fas fa-hospital"></i> Eye
+          Hospitals</button>
+        <button class="btn btn-outline" onclick="searchOpticians()"><i class="fas fa-glasses"></i> Opticians &amp;
+          Clinics</button>
+      </div>
+      <div class="map-container">
+        <iframe id="mapIframe"
+          src="https://maps.google.com/maps?q=eye+hospitals+in+meerut&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Office Address</h4>
+              <p>MOA Office, Near District Hospital,<br>Meerut Cantt, Meerut — 250001,<br>Uttar Pradesh, India</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 98765 43210 (President)<br>+91 87654 32109 (Secretary)<br>+91 76543 21098 (Office)</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>info@moameerut.org<br>secretary@moameerut.org<br>president@moameerut.org</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday — Saturday: 10:00 AM — 6:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="contact-form" onsubmit="submitContactForm(event)">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-input" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" class="form-input" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" class="form-input" placeholder="What is this regarding?">
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-input" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start"><i
+                class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-about">
+        <h3>Meerut Optometrist Association</h3>
+        <p>Advancing vision care in the heart of Uttar Pradesh since 2008. MOA is a dedicated community of optometry
+          professionals committed to clinical excellence, community service, and the growth of optometric science.</p>
+        <div style="display:flex;gap:10px;margin-top:16px;">
+          <a href="#"
+            style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="#"
+            style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;"><i
+              class="fab fa-instagram"></i></a>
+          <a href="#"
+            style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;"><i
+              class="fab fa-youtube"></i></a>
+          <a href="#"
+            style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;"><i
+              class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#about">About MOA</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#gallery">Events</a>
+        <a href="#notices">Notices</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#" onclick="openLoginModal('member')">Member Login</a>
+        <a href="#" onclick="openLoginModal('admin')">Admin Portal</a>
+        <a href="#map">Find Eye Center</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Meerut Optometrist Association. All rights reserved. Designed with dedication for the optometry
+      community.
+    </div>
+  </footer>
+
+  <!-- Upcoming Events Widget -->
+  <div class="events-widget" id="eventsWidget">
+    <div class="events-widget-panel" id="eventsWidgetPanel">
+      <div class="events-widget-header"><i class="fas fa-calendar-alt"></i> Upcoming Events</div>
+      <div class="events-widget-list" id="eventsWidgetList"></div>
+    </div>
+    <button class="events-widget-toggle" onclick="toggleEventsWidget()" title="Upcoming Events">
+      <i class="fas fa-calendar-alt"></i>
+      <span class="pulse-dot" id="eventsPulse"></span>
+    </button>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Login</h3>
+        <button class="modal-close" onclick="closeLoginModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="login-tabs">
+          <button class="login-tab active" onclick="switchLoginTab('admin')" id="loginTabAdmin">Admin Login</button>
+          <button class="login-tab" onclick="switchLoginTab('member')" id="loginTabMember">Member Login</button>
+        </div>
+        <form class="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-input" id="loginUsername" placeholder="Enter username" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-input" id="loginPassword" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i
+              class="fas fa-sign-in-alt"></i> Login</button>
+          <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:4px;">Contact
+            secretary@moameerut.org for access</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leader Detail Modal -->
+  <div class="modal-overlay" id="leaderModal">
+    <div class="modal-box modal-box-lg">
+      <div class="modal-header">
+        <h3 id="leaderModalTitle">Member Details</h3>
+        <button class="modal-close" onclick="closeLeaderModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="leaderModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div class="dashboard-overlay" id="adminDashboard">
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-header">
+        <h3>MOA Admin</h3>
+        <p>Control Panel</p>
+      </div>
+      <ul class="dash-nav">
+        <li><a class="active" onclick="showDashTab('overview',this)"><i class="fas fa-chart-pie"></i> Overview</a></li>
+        <li><a onclick="showDashTab('notices',this)"><i class="fas fa-bullhorn"></i> Notices</a></li>
+        <li><a onclick="showDashTab('documents',this)"><i class="fas fa-folder-open"></i> Documents</a></li>
+        <li><a onclick="showDashTab('members',this)"><i class="fas fa-users"></i> Members</a></li>
+        <li><a onclick="showDashTab('events',this)"><i class="fas fa-calendar"></i> Events</a></li>
+        <li><a onclick="showDashTab('gallery',this)"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a onclick="showDashTab('content',this)"><i class="fas fa-edit"></i> Content</a></li>
+      </ul>
+      <div style="padding:20px;margin-top:auto;">
+        <button class="btn btn-outline btn-sm"
+          style="width:100%;justify-content:center;color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.2);"
+          onclick="closeAdminDash()"><i class="fas fa-sign-out-alt"></i> Exit Dashboard</button>
+      </div>
+    </aside>
+    <div class="dash-main">
+      <div class="dash-topbar">
+        <h2 id="dashPageTitle">Dashboard Overview</h2>
+        <button class="btn btn-ghost btn-sm" onclick="closeAdminDash()"><i class="fas fa-times"></i> Close</button>
+      </div>
+      <div class="dash-content" id="dashContent"></div>
+    </div>
+  </div>
+
+  <!-- Member Dashboard -->
+  <div class="dashboard-overlay" id="memberDashboard">
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-header">
+        <h3>Member Portal</h3>
+        <p>Committee Access</p>
+      </div>
+      <ul class="dash-nav">
+        <li><a class="active" onclick="showMemberTab('home',this)"><i class="fas fa-home"></i> Home</a></li>
+        <li><a onclick="showMemberTab('m-notices',this)"><i class="fas fa-bullhorn"></i> Notices</a></li>
+        <li><a onclick="showMemberTab('m-documents',this)"><i class="fas fa-folder-open"></i> Documents</a></li>
+        <li><a onclick="showMemberTab('m-directory',this)"><i class="fas fa-address-book"></i> Directory</a></li>
+        <li><a onclick="showMemberTab('m-events',this)"><i class="fas fa-calendar"></i> Events</a></li>
+        <li><a onclick="showMemberTab('m-profile',this)"><i class="fas fa-user-circle"></i> My Profile</a></li>
+      </ul>
+      <div style="padding:20px;">
+        <button class="btn btn-outline btn-sm"
+          style="width:100%;justify-content:center;color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.2);"
+          onclick="closeMemberDash()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+    <div class="dash-main">
+      <div class="dash-topbar">
+        <h2 id="memberPageTitle">Welcome</h2>
+        <button class="btn btn-ghost btn-sm" onclick="closeMemberDash()"><i class="fas fa-times"></i> Close</button>
+      </div>
+      <div class="dash-content" id="memberContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // DATA
+    // ============================================
+
+    const leadershipData = [
+      {
+        id: 1, name: "Dr. Rajesh Kumar Sharma", position: "President",
+        photo: "https://picsum.photos/seed/docrajesh/400/400",
+        education: "B.Optom, M.Optom, FIAO", experience: "22+ Years",
+        shortBio: "Leading optometrist and founding president of MOA",
+        fullBio: "Dr. Rajesh Kumar Sharma is a distinguished optometrist with over 22 years of clinical and academic experience in the field of optometry. He completed his Bachelor of Optometry from All India Institute of Medical Sciences, New Delhi, and pursued his Master's in Optometry from L.V. Prasad Eye Institute, Hyderabad. He holds a Fellowship of the Indian Optometric Association (FIAO).\n\nDr. Sharma has been instrumental in establishing advanced vision care practices in Meerut and has led the Meerut Optometrist Association since its founding in 2008. Under his leadership, MOA has grown from 12 members to over 150 active practitioners. His clinical expertise in contact lens fitting, low vision rehabilitation, and pediatric optometry has benefited thousands of patients across Western Uttar Pradesh.\n\nHe has published 15+ research papers in national and international journals and has been a guest lecturer at over 20 optometry conferences across India.",
+        specializations: ["Contact Lens Specialist", "Low Vision Rehabilitation", "Pediatric Optometry", "Binocular Vision"],
+        achievements: ["Founder President of MOA (2008–Present)", "Published 15+ research papers", "Guest lecturer at 20+ national conferences", "Recognized by UPOA for Excellence in Optometry (2019)", "Initiated rural vision screening program covering 200+ villages"],
+        email: "president@moameerut.org", phone: "+91 98765 43210",
+        clinic: "Sharma Eye Care Centre, Abu Lane, Meerut"
+      },
+      {
+        id: 2, name: "Dr. Anita Verma", position: "Vice President",
+        photo: "https://picsum.photos/seed/docanita/400/400",
+        education: "B.Optom, M.Phil (Optometry)", experience: "18+ Years",
+        shortBio: "Academic leader and specialist in ocular diagnostics",
+        fullBio: "Dr. Anita Verma is a highly respected optometrist and academician with 18 years of experience in clinical practice and optometry education. She holds a B.Optom from Guru Nanak Dev University and an M.Phil in Optometry from Amity University.\n\nDr. Verma has served as Head of the Optometry Department at a leading eye hospital in Meerut for over a decade. She has mentored more than 200 optometry students, many of whom now hold prominent positions across India. Her research focuses on advanced ocular diagnostics, particularly in the areas of optical coherence tomography and corneal topography.\n\nAs Vice President of MOA, she oversees the association's academic programs and student engagement initiatives, ensuring the next generation of optometrists receives comprehensive training.",
+        specializations: ["Ocular Diagnostics", "Corneal Topography", "OCT Interpretation", "Optometry Education"],
+        achievements: ["Vice President of MOA since 2016", "Mentored 200+ optometry students", "Published 10+ papers in peer-reviewed journals", "Organized 30+ CPD workshops", "Member of Academic Council, UPOA"],
+        email: "vp@moameerut.org", phone: "+91 91234 56789",
+        clinic: "Verma Vision Diagnostics, Shastri Nagar, Meerut"
+      },
+      {
+        id: 3, name: "Dr. Priya Agarwal", position: "Secretary",
+        photo: "https://picsum.photos/seed/docpriya/400/400",
+        education: "B.Optom, M.Optom, FAAO", experience: "15+ Years",
+        shortBio: "Dynamic administrator with expertise in contact lens and anterior segment",
+        fullBio: "Dr. Priya Agarwal serves as the Secretary of MOA and is known for her exceptional organizational skills and clinical acumen. She completed her B.Optom from Bharati Vidyapeeth, Pune, and M.Optom from Lotus College of Optometry, Mumbai. She is a Fellow of the American Academy of Optometry (FAAO).\n\nWith 15 years of clinical experience, Dr. Agarwal specializes in advanced contact lens fitting including scleral lenses and orthokeratology. She runs a successful optometry practice in Meerut and has been pivotal in coordinating MOA's annual conferences and continuing education programs.\n\nAs Secretary, she manages all official communications, membership records, and liaison with state and national optometry bodies. Her efforts have significantly improved MOA's operational efficiency and member engagement.",
+        specializations: ["Advanced Contact Lens Fitting", "Scleral Lenses", "Orthokeratology", "Anterior Segment Assessment"],
+        achievements: ["Secretary of MOA since 2020", "FAAO — Fellow, American Academy of Optometry", "Organized MOA's flagship annual conference 5 times", "Introduced digital membership management system", "Speaker at World Congress of Optometry 2022"],
+        email: "secretary@moameerut.org", phone: "+91 87654 32109",
+        clinic: "Agarwal Eye Clinic, Civil Lines, Meerut"
+      },
+      {
+        id: 4, name: "Dr. Manoj Tyagi", position: "Joint Secretary",
+        photo: "https://picsum.photos/seed/docmanoj/400/400",
+        education: "B.Optom, M.Optom", experience: "12+ Years",
+        shortBio: "Efficient coordinator with focus on community eye health programs",
+        fullBio: "Dr. Manoj Tyagi is the Joint Secretary of MOA and brings 12 years of experience in clinical optometry and community eye health. A graduate of Dr. B.R. Ambedkar University, Agra, with a Master's from L.V. Prasad Eye Institute, Dr. Tyagi has been actively involved in organizing vision screening camps across rural Meerut.\n\nHe coordinates MOA's community outreach programs and has been instrumental in establishing partnerships with district health authorities for school vision screening initiatives. His work has led to the screening of over 10,000 school children in the Meerut district.\n\nDr. Tyagi also maintains an active clinical practice with a focus on refractive surgery co-management and post-operative care.",
+        specializations: ["Community Eye Health", "Refractive Surgery Co-management", "School Vision Screening", "Public Health Optometry"],
+        achievements: ["Joint Secretary since 2022", "Screened 10,000+ school children", "Partnered with District Health Dept. for NPCB programs", "Received 'Young Optometrist of the Year' by UPOA (2021)", "Established 5 vision screening centers in rural areas"],
+        email: "jointsec@moameerut.org", phone: "+91 76543 21098",
+        clinic: "Tyagi Optometry Center, Kanker Khera, Meerut"
+      },
+      {
+        id: 5, name: "Dr. Vikram Singh", position: "Treasurer",
+        photo: "https://picsum.photos/seed/docvikram/400/400",
+        education: "B.Optom, MBA (Healthcare)", experience: "16+ Years",
+        shortBio: "Financial strategist managing MOA's resources with transparency",
+        fullBio: "Dr. Vikram Singh serves as Treasurer of MOA, combining his optometry background with financial management expertise. He holds a B.Optom from Delhi University and an MBA in Healthcare Management from Symbiosis, Pune.\n\nWith 16 years in the field, Dr. Singh runs one of Meerut's well-known optical retail chains. His dual expertise in clinical optometry and business management makes him uniquely qualified to manage MOA's finances. Under his tenure as Treasurer, the association has achieved full financial transparency with audited annual reports.\n\nDr. Singh has also been instrumental in securing sponsorships for MOA events from leading optical companies, ensuring financial sustainability of the association's programs.",
+        specializations: ["Optical Retail Management", "Healthcare Finance", "Practice Management", "Ophthalmic Lenses"],
+        achievements: ["Treasurer since 2018", "Implemented transparent financial reporting", "Secured 50+ event sponsorships", "Expanded optical retail to 4 locations", "Speaker on practice management at national forums"],
+        email: "treasurer@moameerut.org", phone: "+91 65432 10987",
+        clinic: "Singh Vision World, Pallavpuram, Meerut"
+      },
+      {
+        id: 6, name: "Dr. Sunita Joshi", position: "Core Committee Member",
+        photo: "https://picsum.photos/seed/docsunita/400/400",
+        education: "B.Optom, M.Optom, Ph.D (Optometry)", experience: "20+ Years",
+        shortBio: "Researcher and educator specializing in binocular vision and vision therapy",
+        fullBio: "Dr. Sunita Joshi is a core committee member of MOA and one of the most academically decorated optometrists in the region. She holds a Ph.D in Optometry from Bharati Vidyapeeth, focusing on binocular vision anomalies in school-going children.\n\nWith 20 years of experience spanning clinical practice, teaching, and research, Dr. Joshi has guided 8 doctoral candidates and published over 25 research papers. She serves as a visiting faculty at several optometry colleges in Uttar Pradesh.\n\nIn MOA, she leads the research and academic committee, organizing annual research colloquia and mentoring young optometrists interested in academic careers.",
+        specializations: ["Binocular Vision", "Vision Therapy", "Strabismus Assessment", "Academic Research"],
+        achievements: ["Ph.D in Optometry", "Guided 8 doctoral candidates", "25+ research publications", "Reviewer for 3 international optometry journals", "Received 'Best Research Paper' at IOA Conference 2020"],
+        email: "sunita.joshi@moameerut.org", phone: "+91 54321 09876",
+        clinic: "Joshi Vision Therapy Clinic, Brahmpuri, Meerut"
+      },
+      {
+        id: 7, name: "Dr. Amit Gupta", position: "Core Committee Member",
+        photo: "https://picsum.photos/seed/docamit/400/400",
+        education: "B.Optom, FIAO, CLS", experience: "14+ Years",
+        shortBio: "Contact lens specialist and clinical trainer",
+        fullBio: "Dr. Amit Gupta is a core committee member of MOA and a recognized expert in contact lens practice. He completed his B.Optom from ITM University and holds a Fellowship of the Indian Optometric Association along with a Certified Contact Lens Specialist (CLS) credential.\n\nWith 14 years of clinical experience, Dr. Gupta has fitted over 5,000 contact lenses including specialty lenses for keratoconus, post-surgical eyes, and prosthetic lenses. He conducts regular hands-on contact lens training workshops for MOA members.\n\nHe serves as a clinical consultant for several contact lens manufacturers and has contributed to developing fitting guidelines adopted by practitioners across the state.",
+        specializations: ["Specialty Contact Lenses", "Keratoconus Management", "Prosthetic Lenses", "Clinical Training"],
+        achievements: ["Fitted 5,000+ contact lenses", "Certified Contact Lens Specialist", "Conducted 40+ hands-on training workshops", "Clinical consultant for 3 contact lens brands", "Published contact lens fitting guidelines for UPOA"],
+        email: "amit.gupta@moameerut.org", phone: "+91 43210 98765",
+        clinic: "Gupta Contact Lens Centre, Begum Bridge, Meerut"
+      },
+      {
+        id: 8, name: "Dr. Neha Kapoor", position: "Core Committee Member",
+        photo: "https://picsum.photos/seed/docneha/400/400",
+        education: "B.Optom, M.Optom (Paediatric)", experience: "10+ Years",
+        shortBio: "Pediatric optometry specialist and early intervention advocate",
+        fullBio: "Dr. Neha Kapoor is a core committee member of MOA and a passionate advocate for pediatric eye care. She completed her B.Optom from Jain University and specialized in Pediatric Optometry during her Master's at Sankara Nethralaya, Chennai.\n\nIn her 10 years of practice, Dr. Kapoor has focused exclusively on children's eye health, managing conditions such as amblyopia, strabismus, congenital cataracts, and learning-related vision problems. She runs Meerut's only dedicated pediatric optometry clinic.\n\nWithin MOA, she leads the 'Early Vision' initiative, a program that trains anganwadi workers and school teachers to identify children at risk of vision problems for early referral.",
+        specializations: ["Pediatric Optometry", "Amblyopia Management", "Learning-Related Vision Problems", "Infant Vision Assessment"],
+        achievements: ["Runs Meerut's only dedicated pediatric optometry clinic", "Founded 'Early Vision' community program", "Trained 500+ school teachers in vision screening", "Speaker at National Pediatric Optometry Symposium 2023", "Managed 3,000+ pediatric cases"],
+        email: "neha.kapoor@moameerut.org", phone: "+91 32109 87654",
+        clinic: "Kapoor Pediatric Eye Care, Ganga Nagar, Meerut"
+      },
+      {
+        id: 9, name: "Dr. R.P. Mehrotra", position: "Advisory Member",
+        photo: "https://picsum.photos/seed/docrp/400/400",
+        education: "B.Optom, D.Optom, FIOA (Retd.)", experience: "38+ Years",
+        shortBio: "Veteran optometrist and guiding force behind MOA's founding",
+        fullBio: "Dr. R.P. Mehrotra is a legendary figure in Meerut's optometry community and serves as the Advisory Member of MOA. With 38 years of experience, he is one of the senior-most optometrists in Western Uttar Pradesh.\n\nDr. Mehrotra was among the first batch of formally trained optometrists in the region, completing his education in the early 1980s. He established one of Meerut's earliest dedicated optometry clinics and has trained dozens of optometrists who now practice across India.\n\nAs a founding member and now advisor to MOA, Dr. Mehrotra provides strategic guidance and institutional memory. His wisdom and experience continue to shape the association's direction and values.",
+        specializations: ["General Optometry", "Optometry Education", "Practice Ethics", "Mentorship"],
+        achievements: ["38+ years of clinical practice", "Founding member of MOA", "Trained 50+ optometrists", "Former President of UPOA (2005-2008)", "Lifetime Achievement Award — IOA (2018)"],
+        email: "rp.mehrotra@moameerut.org", phone: "+91 21098 76543",
+        clinic: "Mehrotra Eye Clinic, Budhana Gate, Meerut (Retired from Active Practice)"
+      },
+      {
+        id: 10, name: "Dr. Deepak Chauhan", position: "Executive Member",
+        photo: "https://picsum.photos/seed/docdeepak/400/400",
+        education: "B.Optom, M.Optom (Retina)", experience: "8+ Years",
+        shortBio: "Young leader specializing in retinal imaging and tele-optometry",
+        fullBio: "Dr. Deepak Chauhan is an Executive Member of MOA and represents the new generation of optometry leadership. He completed his B.Optom from Amity University and his Master's with a specialization in retinal imaging from L.V. Prasad Eye Institute.\n\nIn 8 years, Dr. Chauhan has emerged as an expert in retinal imaging, optical coherence tomography, and fundus photography. He has been a pioneer in introducing tele-optometry services in Meerut, enabling remote retinal screening for patients in underserved areas.\n\nAs Executive Member, Dr. Chauhan leads MOA's digital initiatives and technology adoption programs, helping the association embrace modern tools for better patient care and member engagement.",
+        specializations: ["Retinal Imaging", "OCT & Fundus Photography", "Tele-Optometry", "Digital Health"],
+        achievements: ["Pioneered tele-optometry in Meerut", "Set up 3 remote retinal screening centers", "Published 8 papers on retinal imaging", "MOA's youngest Executive Member (elected at 30)", "Tech consultant for 2 ophthalmic device companies"],
+        email: "deepak.chauhan@moameerut.org", phone: "+91 10987 65432",
+        clinic: "Chauhan Retina Care & Tele-Optometry, Shastri Nagar, Meerut"
+      }
+    ];
+
+    const defaultGalleryImages = [
+      { id: 1, eventName: "MOA Annual Conference 2024", src: "https://picsum.photos/seed/moaconf1/560/360" },
+      { id: 2, eventName: "Vision Screening Camp — Rural Meerut", src: "https://picsum.photos/seed/moacamp1/560/360" },
+      { id: 3, eventName: "World Sight Day Celebration", src: "https://picsum.photos/seed/moawsd1/560/360" },
+      { id: 4, eventName: "CPD Workshop on Retinal Imaging", src: "https://picsum.photos/seed/moacpd1/560/360" },
+      { id: 5, eventName: "Free Eye Check-up Drive", src: "https://picsum.photos/seed/moadrive1/560/360" },
+      { id: 6, eventName: "MOA Foundation Day Celebration", src: "https://picsum.photos/seed/moafound1/560/360" },
+      { id: 7, eventName: "Contact Lens Fitting Workshop", src: "https://picsum.photos/seed/moacl1/560/360" },
+      { id: 8, eventName: "Pediatric Vision Screening Program", src: "https://picsum.photos/seed/moaped1/560/360" },
+      { id: 9, eventName: "Annual General Meeting 2023", src: "https://picsum.photos/seed/moaagm1/560/360" },
+      { id: 10, eventName: "UPOA Regional Conference Hosted by MOA", src: "https://picsum.photos/seed/moaupo1/560/360" },
+      { id: 11, eventName: "Optometry Students Mentorship Session", src: "https://picsum.photos/seed/moament1/560/360" },
+      { id: 12, eventName: "World Optometry Day Celebration", src: "https://picsum.photos/seed/moawod1/560/360" }
+    ];
+
+    const defaultNotices = [
+      { id: 1, title: "Annual General Meeting 2025", content: "The 17th Annual General Meeting of MOA is scheduled for March 15, 2025, at Hotel Crystal Palace, Meerut. All members are requested to attend. Agenda includes annual report presentation, financial audit, and election of office bearers for 2025-27 term.", date: "2025-02-01", priority: "high" },
+      { id: 2, title: "Membership Renewal Deadline Extended", content: "The deadline for membership renewal for the year 2025-26 has been extended to February 28, 2025. Members are requested to submit their renewal forms and fees to the Secretary at the earliest.", date: "2025-01-20", priority: "normal" },
+      { id: 3, title: "Workshop: Advanced Contact Lens Fitting", content: "A hands-on workshop on Advanced Contact Lens Fitting including scleral lenses and orthokeratology will be held on April 5, 2025. Registration is now open. Limited seats available — register by March 25.", date: "2025-01-15", priority: "normal" },
+      { id: 4, title: "MOA Constitution Amendment Notice", content: "As per the resolution passed in the special general meeting on January 10, 2025, proposed amendments to the MOA constitution are published for member review. Feedback may be submitted to the Secretary by February 15, 2025.", date: "2025-01-10", priority: "high" }
+    ];
+
+    const defaultDocuments = [
+      { id: 1, name: "MOA Constitution 2024 (Amended)", category: "Constitution", date: "2024-12-15", size: "2.4 MB" },
+      { id: 2, name: "Annual Report 2023-24", category: "Reports", date: "2024-11-30", size: "5.1 MB" },
+      { id: 3, name: "Membership Application Form", category: "Forms", date: "2024-06-01", size: "340 KB" },
+      { id: 4, name: "CPD Guidelines and Tracking Sheet", category: "Guidelines", date: "2024-04-10", size: "820 KB" },
+      { id: 5, name: "Financial Audit Report 2023-24", category: "Reports", date: "2024-10-20", size: "3.7 MB" },
+      { id: 6, name: "Code of Ethics for Optometrists", category: "Guidelines", date: "2024-01-15", size: "510 KB" }
+    ];
+
+    const defaultEvents = [
+      { id: 1, title: "Annual General Meeting 2025", date: "2025-03-15", description: "17th AGM at Hotel Crystal Palace, Meerut. Agenda: Annual report, financial audit, elections.", venue: "Hotel Crystal Palace, Meerut" },
+      { id: 2, title: "Workshop: Advanced Contact Lens Fitting", date: "2025-04-05", description: "Hands-on workshop on scleral lenses and orthokeratology by Dr. Amit Gupta.", venue: "MOA Office, Meerut" },
+      { id: 3, title: "Vision Screening Camp — Mawana", date: "2025-04-20", description: "Free vision screening camp in collaboration with District Health Department, Mawana Block.", venue: "Community Health Center, Mawana" },
+      { id: 4, title: "National Optometry Day Celebration", date: "2025-04-28", description: "Celebration of National Optometry Day with public awareness rally and free check-up camp.", venue: "District Hospital Ground, Meerut" },
+      { id: 5, title: "CPD Seminar: Advances in OCT Interpretation", date: "2025-05-10", description: "Continuing education seminar on optical coherence tomography by Dr. Sunita Joshi.", venue: "MOA Conference Hall" },
+      { id: 6, title: "UPOA State Conference 2025", date: "2025-06-15", description: "Uttar Pradesh Optometric Association annual state conference. MOA members get discounted registration.", venue: "Lucknow" }
+    ];
+
+    const defaultMembers = [
+      { id: 1, name: "Dr. Rajesh Kumar Sharma", email: "president@moameerut.org", phone: "+91 98765 43210", membershipNo: "MOA-2008-001", status: "active", joinDate: "2008-01-15" },
+      { id: 2, name: "Dr. Anita Verma", email: "vp@moameerut.org", phone: "+91 91234 56789", membershipNo: "MOA-2008-002", status: "active", joinDate: "2008-01-15" },
+      { id: 3, name: "Dr. Priya Agarwal", email: "secretary@moameerut.org", phone: "+91 87654 32109", membershipNo: "MOA-2010-015", status: "active", joinDate: "2010-03-20" },
+      { id: 4, name: "Dr. Manoj Tyagi", email: "jointsec@moameerut.org", phone: "+91 76543 21098", membershipNo: "MOA-2012-028", status: "active", joinDate: "2012-06-10" },
+      { id: 5, name: "Dr. Vikram Singh", email: "treasurer@moameerut.org", phone: "+91 65432 10987", membershipNo: "MOA-2009-008", status: "active", joinDate: "2009-02-28" },
+      { id: 6, name: "Dr. Sunita Joshi", email: "sunita.joshi@moameerut.org", phone: "+91 54321 09876", membershipNo: "MOA-2008-005", status: "active", joinDate: "2008-01-15" },
+      { id: 7, name: "Dr. Amit Gupta", email: "amit.gupta@moameerut.org", phone: "+91 43210 98765", membershipNo: "MOA-2013-035", status: "active", joinDate: "2013-01-20" },
+      { id: 8, name: "Dr. Neha Kapoor", email: "neha.kapoor@moameerut.org", phone: "+91 32109 87654", membershipNo: "MOA-2015-048", status: "active", joinDate: "2015-04-15" },
+      { id: 9, name: "Dr. R.P. Mehrotra", email: "rp.mehrotra@moameerut.org", phone: "+91 21098 76543", membershipNo: "MOA-2008-003", status: "active", joinDate: "2008-01-15" },
+      { id: 10, name: "Dr. Deepak Chauhan", email: "deepak.chauhan@moameerut.org", phone: "+91 10987 65432", membershipNo: "MOA-2017-062", status: "active", joinDate: "2017-07-01" },
+      { id: 11, name: "Dr. Kavita Sharma", email: "kavita.s@moameerut.org", phone: "+91 99887 76655", membershipNo: "MOA-2018-071", status: "active", joinDate: "2018-03-10" },
+      { id: 12, name: "Dr. Rohit Jain", email: "rohit.j@moameerut.org", phone: "+91 88776 65544", membershipNo: "MOA-2019-080", status: "pending", joinDate: "2019-09-05" },
+      { id: 13, name: "Dr. Meera Devi", email: "meera.d@moameerut.org", phone: "+91 77665 54433", membershipNo: "MOA-2020-089", status: "inactive", joinDate: "2020-01-22" }
+    ];
+
+    // ============================================
+    // INITIALIZATION & LOCAL STORAGE
+    // ============================================
+
+    function initData(key, defaultVal) {
+      if (!localStorage.getItem('moa_' + key)) {
+        localStorage.setItem('moa_' + key, JSON.stringify(defaultVal));
+      }
+      return JSON.parse(localStorage.getItem('moa_' + key));
+    }
+
+    let notices = initData('notices', defaultNotices);
+    let documents = initData('documents', defaultDocuments);
+    let members = initData('members', defaultMembers);
+    let events = initData('events', defaultEvents);
+    let galleryImages = initData('gallery', defaultGalleryImages);
+    let siteContent = initData('content', {
+      about: document.getElementById('aboutText').innerText,
+      tagline: "Advance vision care in the heart of Uttar Pradesh"
+    });
+
+    function saveData(key, data) {
+      localStorage.setItem('moa_' + key, JSON.stringify(data));
+    }
+
+    let currentLoginType = 'admin';
+
+    // ============================================
+    // NAVIGATION
+    // ============================================
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    function toggleMobile() {
+      document.getElementById('mobileMenu').classList.add('open');
+    }
+    function closeMobile() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+    function closeMobileOutside(e) {
+      if (e.target === document.getElementById('mobileMenu')) closeMobile();
+    }
+    function goHome() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ============================================
+    // TOAST NOTIFICATIONS
+    // ============================================
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+      toast.innerHTML = `<i class="fas ${icons[type] || icons.info}" style="color:var(--${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'})"></i> ${message}`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; toast.style.transition = 'all 0.3s'; setTimeout(() => toast.remove(), 300); }, 3500);
+    }
+
+    // ============================================
+    // LEADERSHIP
+    // ============================================
+
+    function renderLeadership() {
+      const grid = document.getElementById('leadershipGrid');
+      grid.innerHTML = leadershipData.map(m => `
+    <div class="leader-card" onclick="openLeaderModal(${m.id})">
+      <div class="leader-img-wrap"><img src="${m.photo}" alt="${m.name}" loading="lazy"></div>
+      <div class="leader-name">${m.name}</div>
+      <div class="leader-role">${m.position}</div>
+      <div class="leader-qual">${m.education}<br>${m.experience}</div>
+      <div class="view-more"><i class="fas fa-arrow-right"></i> View Profile</div>
+    </div>
+  `).join('');
+    }
+
+    function openLeaderModal(id) {
+      const m = leadershipData.find(l => l.id === id);
+      if (!m) return;
+      document.getElementById('leaderModalTitle').textContent = m.name;
+      document.getElementById('leaderModalBody').innerHTML = `
+    <div class="leader-detail-top">
+      <img src="${m.photo}" alt="${m.name}" class="leader-detail-img">
+      <div class="leader-detail-info">
+        <h2>${m.name}</h2>
+        <div class="role-badge">${m.position}</div>
+        <p style="margin-bottom:6px"><strong>${m.education}</strong></p>
+        <p>${m.experience} of Clinical Experience</p>
+      </div>
+    </div>
+    <div class="leader-detail-section">
+      <h4>Biography</h4>
+      <p>${m.fullBio.replace(/\n\n/g, '</p><p style="margin-top:12px">')}</p>
+    </div>
+    <div class="leader-detail-section">
+      <h4>Areas of Specialization</h4>
+      <div class="leader-detail-tags">${m.specializations.map(s => `<span>${s}</span>`).join('')}</div>
+    </div>
+    <div class="leader-detail-section">
+      <h4>Key Achievements</h4>
+      <ul>${m.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
+    </div>
+    <div class="leader-detail-section">
+      <h4>Contact & Practice</h4>
+      <div class="leader-detail-contact">
+        <span><i class="fas fa-envelope"></i> ${m.email}</span>
+        <span><i class="fas fa-phone"></i> ${m.phone}</span>
+      </div>
+      <p style="margin-top:8px;font-size:13.5px;color:var(--text-sec)"><i class="fas fa-clinic-medical" style="color:var(--primary);margin-right:6px"></i>${m.clinic}</p>
+    </div>
+  `;
+      document.getElementById('leaderModal').classList.add('open');
+    }
+    function closeLeaderModal() {
+      document.getElementById('leaderModal').classList.remove('open');
+    }
+
+    // ============================================
+    // GALLERY MARQUEE
+    // ============================================
+
+    function renderGallery() {
+      const imgs = galleryImages.length > 0 ? galleryImages : defaultGalleryImages;
+
+      function makeCard(img) {
+        return `<div class="gallery-card"><img src="${img.src}" alt="${img.eventName}" loading="lazy"><div class="gallery-card-label"><i class="fas fa-camera" style="margin-right:6px;color:var(--secondary);font-size:11px"></i>${img.eventName}</div></div>`;
+      }
+
+      // Repeat images 4× to build one "block" wide enough for any viewport
+      // Then duplicate the block (total 8×) so CSS translateX(-50%) loops seamlessly
+      const bigArr = [...imgs, ...imgs, ...imgs, ...imgs];
+      const block = bigArr.map(makeCard).join('');
+      const seamless = block + block; // 8× total repetitions
+
+      // Each row gets the same full set but offset differently via CSS start delay
+      document.getElementById('galleryRow1').innerHTML = seamless;
+      document.getElementById('galleryRow2').innerHTML = seamless;
+      document.getElementById('galleryRow3').innerHTML = seamless;
+    }
+
+
+    // ============================================
+    // NOTICE BOARD
+    // ============================================
+
+    function renderNoticeBoard() {
+      const list = document.getElementById('noticeBoardList');
+      if (notices.length === 0) {
+        list.innerHTML = '<div class="empty-state"><i class="fas fa-bullhorn"></i><p>No notices published yet.</p></div>';
+        return;
+      }
+      list.innerHTML = notices.sort((a, b) => new Date(b.date) - new Date(a.date)).map(n => {
+        const d = new Date(n.date);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const priColor = n.priority === 'high' ? 'var(--danger)' : 'var(--primary)';
+        return `<div class="notice-item">
+      <div class="notice-date-badge" style="background:${priColor}">
+        <div class="day">${d.getDate()}</div>
+        <div class="month">${months[d.getMonth()]}</div>
+      </div>
+      <div>
+        <h4>${n.priority === 'high' ? '<i class="fas fa-exclamation-circle" style="color:var(--danger);margin-right:4px"></i>' : ''}${n.title}</h4>
+        <p>${n.content.substring(0, 150)}${n.content.length > 150 ? '...' : ''}</p>
+      </div>
+    </div>`;
+      }).join('');
+    }
+
+    function updateTicker() {
+      const content = document.getElementById('tickerContent');
+      const items = notices.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+      const html = items.map(n => `<span>${n.title}</span>`).join('');
+      content.innerHTML = html + html; // duplicate for seamless loop
+    }
+
+    // ============================================
+    // UPCOMING EVENTS WIDGET
+    // ============================================
+
+    function renderEventsWidget() {
+      const list = document.getElementById('eventsWidgetList');
+      const now = new Date();
+      const upcoming = events.filter(e => new Date(e.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 5);
+      const pulse = document.getElementById('eventsPulse');
+      pulse.style.display = upcoming.length > 0 ? 'block' : 'none';
+
+      if (upcoming.length === 0) {
+        list.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);font-size:13px">No upcoming events</div>';
+        return;
+      }
+      list.innerHTML = upcoming.map(e => {
+        const d = new Date(e.date);
+        const opts = { day: 'numeric', month: 'short', year: 'numeric' };
+        return `<div class="event-widget-item">
+      <div class="event-widget-date"><i class="fas fa-clock" style="margin-right:4px"></i>${d.toLocaleDateString('en-IN', opts)}</div>
+      <h5>${e.title}</h5>
+      <p><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>${e.venue}</p>
+    </div>`;
+      }).join('');
+    }
+
+    function toggleEventsWidget() {
+      document.getElementById('eventsWidgetPanel').classList.toggle('open');
+    }
+
+    // ============================================
+    // MAP
+    // ============================================
+
+    function updateMap(query) {
+      document.getElementById('mapIframe').src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    }
+    function searchMeerutCenters() { updateMap('eye care centers in meerut'); }
+    function searchHospitals() { updateMap('eye hospitals in meerut'); }
+    function searchOpticians() { updateMap('opticians and eye clinics in meerut'); }
+    function findNearbyCenters() {
+      if (!navigator.geolocation) {
+        showToast('Geolocation is not supported by your browser.', 'error');
+        return;
+      }
+      showToast('Detecting your location...', 'info');
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          updateMap(`eye care centers near ${latitude},${longitude}`);
+          showToast('Showing eye care centers near your location.', 'success');
+        },
+        (err) => {
+          showToast('Could not detect location. Please allow location access.', 'error');
+        },
+        { enableHighAccuracy: true, timeout: 10000 }
+      );
+    }
+
+    // ============================================
+    // CONTACT FORM
+    // ============================================
+
+    function submitContactForm(e) {
+      e.preventDefault();
+      showToast('Your message has been sent successfully! We will get back to you soon.', 'success');
+      e.target.reset();
+    }
+
+    // ============================================
+    // LOGIN SYSTEM
+    // ============================================
+
+    function openLoginModal(type) {
+      currentLoginType = type;
+      document.getElementById('loginModal').classList.add('open');
+      switchLoginTab(type);
+      document.getElementById('loginUsername').value = '';
+      document.getElementById('loginPassword').value = '';
+    }
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.remove('open');
+    }
+    function switchLoginTab(type) {
+      currentLoginType = type;
+      document.getElementById('loginTabAdmin').classList.toggle('active', type === 'admin');
+      document.getElementById('loginTabMember').classList.toggle('active', type === 'member');
+    }
+    function handleLogin(e) {
+      e.preventDefault();
+      const user = document.getElementById('loginUsername').value.trim();
+      const pass = document.getElementById('loginPassword').value;
+      if (currentLoginType === 'admin') {
+        if (user === 'admin' && pass === 'moaadmin2024') {
+          closeLoginModal();
+          openAdminDashboard();
+        } else {
+          showToast('Invalid admin credentials.', 'error');
+        }
+      } else {
+        if (user === 'member' && pass === 'moamember2024') {
+          closeLoginModal();
+          openMemberDashboard();
+        } else {
+          showToast('Invalid member credentials.', 'error');
+        }
+      }
+    }
+
+    // ============================================
+    // ADMIN DASHBOARD
+    // ============================================
+
+    function openAdminDashboard() {
+      document.getElementById('adminDashboard').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      showDashTab('overview', document.querySelector('.dash-nav a'));
+    }
+    function closeAdminDash() {
+      document.getElementById('adminDashboard').classList.remove('open');
+      document.body.style.overflow = '';
+      renderAll();
+    }
+
+    function showDashTab(tab, el) {
+      document.querySelectorAll('.dash-nav a').forEach(a => a.classList.remove('active'));
+      if (el) el.classList.add('active');
+      const titles = {
+        overview: 'Dashboard Overview', notices: 'Notice Management',
+        documents: 'Document Repository', members: 'Member Management',
+        events: 'Event Management', gallery: 'Gallery Management', content: 'Content Management'
+      };
+      document.getElementById('dashPageTitle').textContent = titles[tab] || 'Dashboard';
+      const content = document.getElementById('dashContent');
+
+      if (tab === 'overview') {
+        const activeMembers = members.filter(m => m.status === 'active').length;
+        const pendingMembers = members.filter(m => m.status === 'pending').length;
+        content.innerHTML = `
+      <div class="dash-stats">
+        <div class="dash-stat-card"><div class="stat-icon" style="background:var(--primary-50);color:var(--primary)"><i class="fas fa-users"></i></div><div class="stat-num">${members.length}</div><div class="stat-label">Total Members</div></div>
+        <div class="dash-stat-card"><div class="stat-icon" style="background:#DCFCE7;color:var(--success)"><i class="fas fa-user-check"></i></div><div class="stat-num">${activeMembers}</div><div class="stat-label">Active Members</div></div>
+        <div class="dash-stat-card"><div class="stat-icon" style="background:var(--secondary-50);color:var(--secondary)"><i class="fas fa-bullhorn"></i></div><div class="stat-num">${notices.length}</div><div class="stat-label">Notices Published</div></div>
+        <div class="dash-stat-card"><div class="stat-icon" style="background:#FEE2E2;color:var(--danger)"><i class="fas fa-clock"></i></div><div class="stat-num">${pendingMembers}</div><div class="stat-label">Pending Approvals</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="dash-table-wrap">
+          <div class="dash-table-header"><h3>Recent Notices</h3></div>
+          <table class="dash-table"><thead><tr><th>Title</th><th>Date</th></tr></thead><tbody>
+          ${notices.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5).map(n => `<tr><td>${n.title}</td><td>${n.date}</td></tr>`).join('')}
+          </tbody></table>
+        </div>
+        <div class="dash-table-wrap">
+          <div class="dash-table-header"><h3>Upcoming Events</h3></div>
+          <table class="dash-table"><thead><tr><th>Event</th><th>Date</th></tr></thead><tbody>
+          ${events.filter(e => new Date(e.date) >= new Date()).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 5).map(e => `<tr><td>${e.title}</td><td>${e.date}</td></tr>`).join('')}
+          </tbody></table>
+        </div>
+      </div>
+    `;
+      } else if (tab === 'notices') {
+        renderAdminNotices(content);
+      } else if (tab === 'documents') {
+        renderAdminDocuments(content);
+      } else if (tab === 'members') {
+        renderAdminMembers(content);
+      } else if (tab === 'events') {
+        renderAdminEvents(content);
+      } else if (tab === 'gallery') {
+        renderAdminGallery(content);
+      } else if (tab === 'content') {
+        renderAdminContent(content);
+      }
+    }
+
+    // --- Admin: Notices ---
+    function renderAdminNotices(container) {
+      container.innerHTML = `
+    <div class="dash-form" id="noticeForm">
+      <h3>${document.getElementById('noticeEditId') ? 'Edit Notice' : 'Add New Notice'}</h3>
+      <input type="hidden" id="noticeEditId" value="">
+      <div class="dash-form-grid">
+        <div class="form-group"><label>Title</label><input type="text" class="form-input" id="noticeTitle" placeholder="Notice title"></div>
+        <div class="form-group"><label>Date</label><input type="date" class="form-input" id="noticeDate"></div>
+        <div class="form-group full-width"><label>Content</label><textarea class="form-input" id="noticeContent" rows="4" placeholder="Notice content"></textarea></div>
+        <div class="form-group"><label>Priority</label>
+          <select class="form-input" id="noticePriority"><option value="normal">Normal</option><option value="high">High</option></select>
+        </div>
+        <div class="form-group" style="display:flex;align-items:flex-end;gap:8px;">
+          <button class="btn btn-primary" onclick="saveNotice()"><i class="fas fa-save"></i> Save</button>
+          <button class="btn btn-ghost" onclick="cancelNoticeEdit()"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>All Notices (${notices.length})</h3></div>
+      <table class="dash-table"><thead><tr><th>Title</th><th>Date</th><th>Priority</th><th>Action</th></tr></thead><tbody>
+      ${notices.sort((a, b) => new Date(b.date) - new Date(a.date)).map(n => `<tr>
+        <td>${n.title}</td>
+        <td>${n.date}</td>
+        <td><span class="status-badge ${n.priority === 'high' ? 'status-inactive' : 'status-active'}">${n.priority}</span></td>
+        <td><button class="btn btn-danger btn-sm" onclick="deleteNotice(${n.id})"><i class="fas fa-trash"></i></button></td>
+      </tr>`).join('')}
+      </tbody></table>
+    </div>
+  `;
+    }
+    function saveNotice() {
+      const title = document.getElementById('noticeTitle').value.trim();
+      const date = document.getElementById('noticeDate').value;
+      const content = document.getElementById('noticeContent').value.trim();
+      const priority = document.getElementById('noticePriority').value;
+      if (!title || !date || !content) { showToast('Please fill all fields.', 'error'); return; }
+      notices.push({ id: Date.now(), title, content, date, priority });
+      saveData('notices', notices);
+      showToast('Notice published!', 'success');
+      showDashTab('notices', null);
+    }
+    function deleteNotice(id) {
+      notices = notices.filter(n => n.id !== id);
+      saveData('notices', notices);
+      showToast('Notice deleted.', 'info');
+      showDashTab('notices', null);
+    }
+    function cancelNoticeEdit() { showDashTab('notices', null); }
+
+    // --- Admin: Documents ---
+    function renderAdminDocuments(container) {
+      container.innerHTML = `
+    <div class="dash-form">
+      <h3>Upload Document</h3>
+      <div class="dash-form-grid">
+        <div class="form-group"><label>Document Name</label><input type="text" class="form-input" id="docName" placeholder="Document title"></div>
+        <div class="form-group"><label>Category</label>
+          <select class="form-input" id="docCategory"><option>Constitution</option><option>Reports</option><option>Forms</option><option>Guidelines</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>Date</label><input type="date" class="form-input" id="docDate"></div>
+        <div class="form-group"><label>File Size</label><input type="text" class="form-input" id="docSize" placeholder="e.g. 2.4 MB"></div>
+        <div class="form-group" style="display:flex;align-items:flex-end">
+          <button class="btn btn-primary" onclick="saveDocument()"><i class="fas fa-save"></i> Add Document</button>
+        </div>
+      </div>
+    </div>
+    <div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>Documents (${documents.length})</h3></div>
+      <table class="dash-table"><thead><tr><th>Name</th><th>Category</th><th>Date</th><th>Size</th><th>Action</th></tr></thead><tbody>
+      ${documents.map(d => `<tr>
+        <td><i class="fas fa-file-alt" style="color:var(--primary);margin-right:6px"></i>${d.name}</td>
+        <td>${d.category}</td><td>${d.date}</td><td>${d.size}</td>
+        <td><button class="btn btn-danger btn-sm" onclick="deleteDocument(${d.id})"><i class="fas fa-trash"></i></button></td>
+      </tr>`).join('')}
+      </tbody></table>
+    </div>
+  `;
+    }
+    function saveDocument() {
+      const name = document.getElementById('docName').value.trim();
+      const category = document.getElementById('docCategory').value;
+      const date = document.getElementById('docDate').value;
+      const size = document.getElementById('docSize').value.trim();
+      if (!name || !date) { showToast('Please enter name and date.', 'error'); return; }
+      documents.push({ id: Date.now(), name, category, date, size: size || 'N/A' });
+      saveData('documents', documents);
+      showToast('Document added!', 'success');
+      showDashTab('documents', null);
+    }
+    function deleteDocument(id) {
+      documents = documents.filter(d => d.id !== id);
+      saveData('documents', documents);
+      showToast('Document removed.', 'info');
+      showDashTab('documents', null);
+    }
+
+    // --- Admin: Members ---
+    function renderAdminMembers(container) {
+      container.innerHTML = `
+    <div class="dash-form">
+      <h3>Add New Member</h3>
+      <div class="dash-form-grid">
+        <div class="form-group"><label>Full Name</label><input type="text" class="form-input" id="memName" placeholder="Dr. Full Name"></div>
+        <div class="form-group"><label>Membership No.</label><input type="text" class="form-input" id="memNo" placeholder="MOA-YYYY-XXX"></div>
+        <div class="form-group"><label>Email</label><input type="email" class="form-input" id="memEmail" placeholder="email@example.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" class="form-input" id="memPhone" placeholder="+91 XXXXX XXXXX"></div>
+        <div class="form-group"><label>Join Date</label><input type="date" class="form-input" id="memDate"></div>
+        <div class="form-group"><label>Status</label>
+          <select class="form-input" id="memStatus"><option value="active">Active</option><option value="pending">Pending</option><option value="inactive">Inactive</option></select>
+        </div>
+        <div class="form-group full-width" style="display:flex;gap:8px">
+          <button class="btn btn-primary" onclick="saveMember()"><i class="fas fa-save"></i> Add Member</button>
+        </div>
+      </div>
+    </div>
+    <div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>All Members (${members.length})</h3></div>
+      <div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Name</th><th>Membership No.</th><th>Status</th><th>Joined</th><th>Action</th></tr></thead><tbody>
+      ${members.map(m => `<tr>
+        <td>${m.name}</td><td>${m.membershipNo}</td>
+        <td><span class="status-badge status-${m.status}">${m.status}</span></td>
+        <td>${m.joinDate}</td>
+        <td><button class="btn btn-danger btn-sm" onclick="deleteMember(${m.id})"><i class="fas fa-trash"></i></button></td>
+      </tr>`).join('')}
+      </tbody></table></div>
+    </div>
+  `;
+    }
+    function saveMember() {
+      const name = document.getElementById('memName').value.trim();
+      const membershipNo = document.getElementById('memNo').value.trim();
+      const email = document.getElementById('memEmail').value.trim();
+      const phone = document.getElementById('memPhone').value.trim();
+      const joinDate = document.getElementById('memDate').value;
+      const status = document.getElementById('memStatus').value;
+      if (!name || !membershipNo || !joinDate) { showToast('Please fill required fields.', 'error'); return; }
+      members.push({ id: Date.now(), name, membershipNo, email, phone, status, joinDate });
+      saveData('members', members);
+      showToast('Member added!', 'success');
+      showDashTab('members', null);
+    }
+    function deleteMember(id) {
+      members = members.filter(m => m.id !== id);
+      saveData('members', members);
+      showToast('Member removed.', 'info');
+      showDashTab('members', null);
+    }
+
+    // --- Admin: Events ---
+    function renderAdminEvents(container) {
+      container.innerHTML = `
+    <div class="dash-form">
+      <h3>Add New Event</h3>
+      <div class="dash-form-grid">
+        <div class="form-group full-width"><label>Event Title</label><input type="text" class="form-input" id="evTitle" placeholder="Event name"></div>
+        <div class="form-group"><label>Date</label><input type="date" class="form-input" id="evDate"></div>
+        <div class="form-group"><label>Venue</label><input type="text" class="form-input" id="evVenue" placeholder="Venue name"></div>
+        <div class="form-group full-width"><label>Description</label><textarea class="form-input" id="evDesc" rows="3" placeholder="Event description"></textarea></div>
+        <div class="form-group" style="display:flex;align-items:flex-end">
+          <button class="btn btn-primary" onclick="saveEvent()"><i class="fas fa-save"></i> Add Event</button>
+        </div>
+      </div>
+    </div>
+    <div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>All Events (${events.length})</h3></div>
+      <table class="dash-table"><thead><tr><th>Event</th><th>Date</th><th>Venue</th><th>Action</th></tr></thead><tbody>
+      ${events.sort((a, b) => new Date(b.date) - new Date(a.date)).map(e => `<tr>
+        <td>${e.title}</td><td>${e.date}</td><td>${e.venue}</td>
+        <td><button class="btn btn-danger btn-sm" onclick="deleteEvent(${e.id})"><i class="fas fa-trash"></i></button></td>
+      </tr>`).join('')}
+      </tbody></table>
+    </div>
+  `;
+    }
+    function saveEvent() {
+      const title = document.getElementById('evTitle').value.trim();
+      const date = document.getElementById('evDate').value;
+      const venue = document.getElementById('evVenue').value.trim();
+      const description = document.getElementById('evDesc').value.trim();
+      if (!title || !date) { showToast('Please fill title and date.', 'error'); return; }
+      events.push({ id: Date.now(), title, date, description, venue: venue || 'TBD' });
+      saveData('events', events);
+      showToast('Event added!', 'success');
+      showDashTab('events', null);
+    }
+    function deleteEvent(id) {
+      events = events.filter(e => e.id !== id);
+      saveData('events', events);
+      showToast('Event removed.', 'info');
+      showDashTab('events', null);
+    }
+
+    // --- Admin: Gallery ---
+    function renderAdminGallery(container) {
+      container.innerHTML = `
+    <div class="dash-form">
+      <h3>Add Gallery Image</h3>
+      <div class="dash-form-grid">
+        <div class="form-group"><label>Event Name</label><input type="text" class="form-input" id="galName" placeholder="Event name"></div>
+        <div class="form-group"><label>Image URL</label><input type="text" class="form-input" id="galUrl" placeholder="https://..."></div>
+        <div class="form-group" style="display:flex;align-items:flex-end;gap:8px">
+          <button class="btn btn-primary" onclick="saveGalleryImage()"><i class="fas fa-save"></i> Add Image</button>
+          <button class="btn btn-ghost" onclick="addRandomGalleryImage()"><i class="fas fa-dice"></i> Add Random</button>
+        </div>
+      </div>
+    </div>
+    <div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>Gallery Images (${galleryImages.length})</h3></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:16px">
+      ${galleryImages.map(g => `
+        <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative">
+          <img src="${g.src}" style="width:100%;height:110px;object-fit:cover" alt="${g.eventName}">
+          <div style="padding:6px 10px;font-size:11px;font-weight:600;color:var(--text-sec);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g.eventName}</div>
+          <button class="btn btn-danger btn-sm" style="position:absolute;top:4px;right:4px;padding:3px 7px;font-size:10px" onclick="deleteGalleryImage(${g.id})"><i class="fas fa-times"></i></button>
+        </div>`).join('')}
+      </div>
+    </div>
+  `;
+    }
+    function saveGalleryImage() {
+      const name = document.getElementById('galName').value.trim();
+      const src = document.getElementById('galUrl').value.trim();
+      if (!name || !src) { showToast('Please fill both fields.', 'error'); return; }
+      galleryImages.push({ id: Date.now(), eventName: name, src });
+      saveData('gallery', galleryImages);
+      showToast('Image added!', 'success');
+      showDashTab('gallery', null);
+    }
+    function addRandomGalleryImage() {
+      galleryImages.push({ id: Date.now(), eventName: 'MOA Event', src: `https://picsum.photos/seed/moa${Date.now()}/560/360` });
+      saveData('gallery', galleryImages);
+      showToast('Random image added!', 'success');
+      showDashTab('gallery', null);
+    }
+    function deleteGalleryImage(id) {
+      galleryImages = galleryImages.filter(g => g.id !== id);
+      saveData('gallery', galleryImages);
+      showToast('Image removed.', 'info');
+      showDashTab('gallery', null);
+    }
+
+    // --- Admin: Content ---
+    function renderAdminContent(container) {
+      const currentAbout = document.getElementById('aboutText').innerText;
+      container.innerHTML = `
+    <div class="dash-form">
+      <h3>Edit About Section</h3>
+      <div class="content-editor">
+        <div class="form-group"><label>About Text</label>
+          <textarea id="contentAbout" rows="8">${currentAbout}</textarea>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="margin-top:14px" onclick="saveContent()"><i class="fas fa-save"></i> Save Changes</button>
+    </div>
+    <div class="dash-form">
+      <h3>Tagline</h3>
+      <div class="form-group"><label>Current Tagline</label>
+        <input type="text" class="form-input" id="contentTagline" value="Advance vision care in the heart of Uttar Pradesh">
+      </div>
+      <button class="btn btn-primary" style="margin-top:10px" onclick="saveContent()"><i class="fas fa-save"></i> Save Tagline</button>
+    </div>
+  `;
+    }
+    function saveContent() {
+      const aboutEl = document.getElementById('contentAbout');
+      if (aboutEl && aboutEl.value.trim()) {
+        document.getElementById('aboutText').innerText = aboutEl.value.trim();
+      }
+      showToast('Content updated successfully!', 'success');
+    }
+
+    // ============================================
+    // MEMBER DASHBOARD
+    // ============================================
+
+    function openMemberDashboard() {
+      document.getElementById('memberDashboard').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      showMemberTab('home', document.querySelector('#memberDashboard .dash-nav a'));
+    }
+    function closeMemberDash() {
+      document.getElementById('memberDashboard').classList.remove('open');
+      document.body.style.overflow = '';
+      renderAll();
+    }
+
+    function showMemberTab(tab, el) {
+      document.querySelectorAll('#memberDashboard .dash-nav a').forEach(a => a.classList.remove('active'));
+      if (el) el.classList.add('active');
+      const titles = { home: 'Welcome', 'm-notices': 'Notice Board', 'm-documents': 'Document Repository', 'm-directory': 'Member Directory', 'm-events': 'Events', 'm-profile': 'My Profile' };
+      document.getElementById('memberPageTitle').textContent = titles[tab] || 'Member Portal';
+      const content = document.getElementById('memberContent');
+
+      if (tab === 'home') {
+        const upcoming = events.filter(e => new Date(e.date) >= new Date()).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 3);
+        const recent = notices.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+        content.innerHTML = `
+      <div class="member-welcome">
+        <h2>Welcome, Committee Member</h2>
+        <p>Access notices, documents, events, and the member directory from your portal.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div class="dash-table-wrap">
+          <div class="dash-table-header"><h3>Latest Notices</h3></div>
+          <table class="dash-table"><thead><tr><th>Title</th><th>Date</th></tr></thead><tbody>
+          ${recent.map(n => `<tr><td>${n.title}</td><td>${n.date}</td></tr>`).join('')}
+          </tbody></table>
+        </div>
+        <div class="dash-table-wrap">
+          <div class="dash-table-header"><h3>Upcoming Events</h3></div>
+          <table class="dash-table"><thead><tr><th>Event</th><th>Date</th></tr></thead><tbody>
+          ${upcoming.map(e => `<tr><td>${e.title}</td><td>${e.date}</td></tr>`).join('')}
+          </tbody></table>
+        </div>
+      </div>`;
+      } else if (tab === 'm-notices') {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        content.innerHTML = `<div class="dash-table-wrap"><div class="dash-table-header"><h3>All Notices</h3></div>` +
+          notices.sort((a, b) => new Date(b.date) - new Date(a.date)).map(n => {
+            const d = new Date(n.date);
+            return `<div style="padding:16px 20px;border-bottom:1px solid var(--border-light);display:flex;gap:14px;align-items:flex-start">
+          <div style="background:${n.priority === 'high' ? 'var(--danger)' : 'var(--primary)'};color:#fff;padding:8px 12px;border-radius:8px;text-align:center;min-width:50px;flex-shrink:0">
+            <div style="font-size:20px;font-weight:700;line-height:1">${d.getDate()}</div>
+            <div style="font-size:9px;text-transform:uppercase">${months[d.getMonth()]}</div>
+          </div>
+          <div><h4 style="font-size:15px;color:var(--primary-dark);margin-bottom:4px;font-weight:600">${n.title}</h4>
+          <p style="font-size:13.5px;color:var(--text-sec)">${n.content}</p></div>
+        </div>`;
+          }).join('') + `</div>`;
+      } else if (tab === 'm-documents') {
+        content.innerHTML = `<div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>Document Repository (${documents.length})</h3></div>
+      <table class="dash-table"><thead><tr><th>Document</th><th>Category</th><th>Date</th><th>Size</th></tr></thead><tbody>
+      ${documents.map(d => `<tr><td><i class="fas fa-file-alt" style="color:var(--primary);margin-right:6px"></i>${d.name}</td><td>${d.category}</td><td>${d.date}</td><td>${d.size}</td></tr>`).join('')}
+      </tbody></table></div>`;
+      } else if (tab === 'm-directory') {
+        content.innerHTML = `<div class="dash-table-wrap">
+      <div class="dash-table-header"><h3>Member Directory (${members.length})</h3></div>
+      <div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Name</th><th>Membership No.</th><th>Email</th><th>Phone</th><th>Status</th></tr></thead><tbody>
+      ${members.map(m => `<tr><td>${m.name}</td><td>${m.membershipNo}</td><td>${m.email}</td><td>${m.phone}</td><td><span class="status-badge status-${m.status}">${m.status}</span></td></tr>`).join('')}
+      </tbody></table></div></div>`;
+      } else if (tab === 'm-events') {
+        const now = new Date();
+        const upcoming = events.filter(e => new Date(e.date) >= now).sort((a, b) => new Date(a.date) - new Date(b.date));
+        const past = events.filter(e => new Date(e.date) < now).sort((a, b) => new Date(b.date) - new Date(a.date));
+        content.innerHTML = `
+      <h3 style="font-size:16px;color:var(--primary);margin-bottom:14px;font-weight:600"><i class="fas fa-arrow-right" style="margin-right:6px;color:var(--secondary)"></i> Upcoming Events</h3>
+      ${upcoming.map(e => `<div style="background:var(--card);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:18px 20px;margin-bottom:10px">
+        <div style="font-size:11px;color:var(--secondary);font-weight:700;text-transform:uppercase">${new Date(e.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+        <h4 style="font-size:15px;color:var(--primary-dark);margin:4px 0;font-weight:600">${e.title}</h4>
+        <p style="font-size:13px;color:var(--text-sec)">${e.description}</p>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:4px"><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>${e.venue}</p>
+      </div>`).join('')}
+      <h3 style="font-size:16px;color:var(--text-muted);margin:20px 0 14px;font-weight:600"><i class="fas fa-history" style="margin-right:6px"></i> Past Events</h3>
+      ${past.map(e => `<div style="background:var(--bg-alt);border:1px solid var(--border-light);border-radius:var(--radius);padding:14px 18px;margin-bottom:8px;opacity:.7">
+        <h4 style="font-size:14px;color:var(--text-sec);font-weight:600">${e.title}</h4>
+        <p style="font-size:12px;color:var(--text-muted)">${e.date} — ${e.venue}</p>
+      </div>`).join('')}`;
+      } else if (tab === 'm-profile') {
+        content.innerHTML = `
+      <div class="member-welcome" style="background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);display:flex;align-items:center;gap:20px">
+        <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;flex-shrink:0"><i class="fas fa-user-md"></i></div>
+        <div><h2 style="margin-bottom:4px">Dr. Committee Member</h2><p>MOA-2015-048 | Active Member since 2015</p></div>
+      </div>
+      <div class="dash-form">
+        <h3>Profile Information</h3>
+        <div class="dash-form-grid">
+          <div class="form-group"><label>Full Name</label><input type="text" class="form-input" value="Dr. Committee Member"></div>
+          <div class="form-group"><label>Membership No.</label><input type="text" class="form-input" value="MOA-2015-048" readonly style="background:var(--bg-alt)"></div>
+          <div class="form-group"><label>Email</label><input type="email" class="form-input" value="member@moameerut.org"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" class="form-input" value="+91 XXXXX XXXXX"></div>
+          <div class="form-group full-width"><label>Clinic / Practice</label><input type="text" class="form-input" value="Your Clinic Name, Meerut"></div>
+          <div class="form-group full-width" style="display:flex">
+            <button class="btn btn-primary" onclick="showToast('Profile updated!','success')"><i class="fas fa-save"></i> Update Profile</button>
+          </div>
+        </div>
+      </div>`;
+      }
+    }
+
+    // ============================================
+    // RENDER ALL & INIT
+    // ============================================
+
+    function renderAll() {
+      renderLeadership();
+      renderGallery();
+      renderNoticeBoard();
+      updateTicker();
+      renderEventsWidget();
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      renderAll();
+    });
+
+    // Fallback: render immediately if DOM already loaded
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      renderAll();
+    }
+  </script>
+</body>
+
+</html>
