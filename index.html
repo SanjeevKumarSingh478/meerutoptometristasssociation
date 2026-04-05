@@ -2768,8 +2768,8 @@
     function updateMap(query) {
       document.getElementById('mapIframe').src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
     }
-    function searchMeerutCenters() { updateMap('eye care centers in meerut'); }
-    function searchHospitals() { updateMap('eye hospitals in meerut'); }
+    function searchMeerutCenters() { updateMap('eye centers in meerut'); }
+    // function searchHospitals() { updateMap('eye hospitals in meerut'); }
     function searchOpticians() { updateMap('opticians and eye clinics in meerut'); }
     function findNearbyCenters() {
       if (!navigator.geolocation) {
